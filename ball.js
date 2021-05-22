@@ -11,13 +11,13 @@ export class Ball extends Phaser.Physics.Arcade.Sprite {
             min: {
                 
                 x: -250,
-                y: -500,
+                y: -500  
                 
             },
             max: {
                 
                 x: 250,
-                y: 500,
+                y: -800
             }
             
         }
@@ -25,35 +25,35 @@ export class Ball extends Phaser.Physics.Arcade.Sprite {
     }
     
     update(time){
-        
-        
+     
         
     }
     
     lunch(){
         
         this.scene.physics.add.existing(this);
-        this.setColliderWorldBounds(true);
+        this.setCollideWorldBounds(true);
         this.setBounce(1,1);
         
         this.setVelocity(
         
-        Phaser.Math.Between(
+            Phaser.Math.Between(
         
-            this.initial_velocity.min.x,
-            this.initial_velocity.max.x,
+                this.initial_velocity.min.x,
+                this.initial_velocity.max.x
         
-        ),
+            ),
         
-        Phaser.Math.Between(
+            Phaser.Math.Between(
         
-            this.initial_velocity.min.y,
-            this.initial_velocity.max.y,
+                this.initial_velocity.min.y,
+                this.initial_velocity.max.y
         
-        )
+            )
         
-        )
+        );
         
     }
+
     
 }

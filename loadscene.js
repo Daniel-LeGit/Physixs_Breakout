@@ -1,4 +1,4 @@
-export class LoadScene extends Phaser.Scene {
+export default class LoadScene extends Phaser.Scene {
     
     constructor() {
         
@@ -9,6 +9,7 @@ export class LoadScene extends Phaser.Scene {
     create(){
         
         this.scene.start('MainScene');
+        this.input.mouse.disableContextMenu();
     }
     
     preload(){

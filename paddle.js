@@ -1,4 +1,4 @@
-export class Paddle extends Phaser.Physics.Arcade.Scene {
+export class Paddle extends Phaser.Physics.Arcade.Sprite {
     
     constructor(scene, x, y, texture) {
         
@@ -8,16 +8,16 @@ export class Paddle extends Phaser.Physics.Arcade.Scene {
         scene.physics.add.existing(this);
         
         this.body.allowGravity = false;
-        this.setColliderWorldBounds(true);
+        this.setCollideWorldBounds(true);
         
-        this.setImovable(true);
+        this.setImmovable(true);
         
         this.ball = undefined;
         this.ball_launched = false;
         
+        this.velocity = 250;
         this.controls = scene.input.keyboard.createCursorKeys();
         
-        this.velocity = 250;
         
     }
     
@@ -48,12 +48,10 @@ export class Paddle extends Phaser.Physics.Arcade.Scene {
         if(!this.ball_launched && this.controls.space.isDown){
             
             this.ball_launched = true;
-            this.ball.lunch();
+            this.scene.lunchables();
             
         }
-        
-        
-        
+                
     }
     
     setBall(ball){

@@ -3,8 +3,8 @@ import LoadScene from './loadscene.js';
 
 const config = {
     
-    width: 750,
-    height: 500,
+    width: 800,
+    height: 600,
     type: Phaser.AUTO, 
     parent: 'gamestop',
     backgroundColor: '#286484',
@@ -14,7 +14,7 @@ const config = {
         default: 'arcade',
         arcade: {
             
-            gravity: { y: 150 },
+            gravity: { y: 250 },
             debug: false
             
         }
